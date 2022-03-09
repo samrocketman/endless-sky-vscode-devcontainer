@@ -1,5 +1,5 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "windows/10edge"
+  config.vm.box = "windows/11dev"
   config.vm.box_check_update = false
   # Windows remote management settings
   config.vm.guest = :windows
@@ -20,7 +20,13 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--ostype", 'Windows10_64']
 
     # Video Settings with remote desktop disabled
-    vb.customize ["modifyvm", :id, "--vram", "256", "--accelerate3d", "on", "--vrde", "off"]
+    vb.customize [ "modifyvm", :id,
+      "--vram", "256",
+      "--accelerate3d", "on",
+      "--vrde", "off",
+      "--graphicscontroller", "vboxsvga",
+      "--nested-hw-virt", "on"]
+
 
     # DVD Drive for VBox Guest Additions
     vb.customize ["storageattach", :id, "--storagectl", "IDE Controller", "--port", "0", "--device", "1", "--type", "dvddrive", "--medium", "emptydrive"]
