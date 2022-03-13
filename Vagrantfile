@@ -4,7 +4,7 @@ Vagrant.configure("2") do |config|
   # Windows remote management settings
   config.vm.guest = :windows
   config.vm.communicator = "winrm"
-  config.winrm.username = "IEUser"
+  config.winrm.username = "User"
   config.winrm.password = "Passw0rd!"
   if Vagrant.has_plugin?("vagrant-vbguest") then
     config.vbguest.auto_update = false
@@ -29,13 +29,13 @@ Vagrant.configure("2") do |config|
 
 
     # DVD Drive for VBox Guest Additions
-    vb.customize ["storageattach", :id, "--storagectl", "IDE Controller", "--port", "0", "--device", "1", "--type", "dvddrive", "--medium", "emptydrive"]
+    #vb.customize ["storageattach", :id, "--storagectl", "IDE Controller", "--port", "0", "--device", "1", "--type", "dvddrive", "--medium", "emptydrive"]
 
     # USB 3 support; it should only run initially
-    unless File.exists? "usb-setup-complete"
-      vb.customize ["storagectl", :id, "--name", "USB", "--add", "usb", "--controller", "USB", "--hostiocache", "on"]
-      vb.customize ["modifyvm", :id, "--usb", "on", "--usbxhci", "on"]
-    end
+    #unless File.exists? "usb-setup-complete"
+    #  vb.customize ["storagectl", :id, "--name", "USB", "--add", "usb", "--controller", "USB", "--hostiocache", "on"]
+    #  vb.customize ["modifyvm", :id, "--usb", "on", "--usbxhci", "on"]
+    #end
   end
 
   # Switch logic for USB 3 support
