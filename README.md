@@ -5,6 +5,8 @@
 Portable development environments for the game [Endless Sky][es] and related
 projects.
 
+[es]: https://endless-sky.github.io/
+
 Available Dev Containers
 ------------------------
 
