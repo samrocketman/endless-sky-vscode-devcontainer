@@ -1,0 +1,11 @@
+version: '3'
+services:
+  es-container:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: /bin/bash -c 'while sleep 1000; do true;done'
+    volumes:
+      - ../../../endless-sky-plugins:/workspace/endless-sky-plugins
+      - .:/workspace/endless-sky-plugins/.devcontainer
+      - ../.vscode:/workspace/endless-sky-plugins/.vscode

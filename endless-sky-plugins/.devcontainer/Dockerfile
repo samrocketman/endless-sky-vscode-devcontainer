@@ -13,7 +13,7 @@ USER es-user
 
 WORKDIR /home/es-user
 
-ADD scripts/requirements.txt /home/es-user/requirements.txt
+ADD requirements.txt /home/es-user/requirements.txt
 
 RUN set -ex; \
 python3 -m venv ~/.pyenv; \

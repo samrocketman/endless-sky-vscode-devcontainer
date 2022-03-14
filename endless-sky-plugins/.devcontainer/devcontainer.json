@@ -1,8 +1,7 @@
 {
-    "build": {
-        "dockerfile": "Dockerfile",
-        "context": ".."
-    },
+    "dockerComposeFile": ["docker-compose.yml"],
+    "workspaceFolder": "/workspace/endless-sky-plugins",
+    "service": "es-container",
     "extensions": [
         "ms-python.python",
         "yzhang.markdown-all-in-one"
