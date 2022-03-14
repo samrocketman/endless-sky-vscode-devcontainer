@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: /bin/bash -c 'while sleep 1000; do true;done'
+    command: Xvfb +extension GLX +render -noreset
     #--device /dev/fuse --cap-add SYS_ADMIN --security-opt apparmor:unconfined
     devices:
       - /dev/fuse
@@ -17,3 +17,5 @@ services:
       - ../../../endless-sky:/workspace/endless-sky
       - .:/workspace/endless-sky/.devcontainer
       - ../.vscode:/workspace/endless-sky/.vscode
+    environment:
+      DISPLAY: ':99'
