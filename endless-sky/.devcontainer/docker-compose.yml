@@ -1,6 +1,7 @@
 version: '3'
 services:
   es-container:
+    init: true
     build:
       context: .
       dockerfile: Dockerfile
