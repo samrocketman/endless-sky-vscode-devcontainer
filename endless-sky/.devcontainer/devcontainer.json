@@ -7,7 +7,8 @@
         "thomasballinger.endless-sky-vscode"
     ],
     "settings": {
-        "endlesssky.executablePath": "endless-sky",
+        "telemetry.telemetryLevel": "off",
+        "endlesssky.executablePath": "/workspace/endless-sky/endless-sky",
         "files.associations": {
             "**/data/**/*.txt": "endlesssky"
         }

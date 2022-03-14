@@ -6,6 +6,7 @@
         "ms-python.python"
     ],
     "settings": {
+        "telemetry.telemetryLevel": "off",
         "python.envFile": "${HOME}/.pyenv"
     }
 }
