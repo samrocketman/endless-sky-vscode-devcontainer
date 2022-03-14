@@ -3,8 +3,7 @@
     "workspaceFolder": "/workspace/endless-sky-plugins",
     "service": "es-container",
     "extensions": [
-        "ms-python.python",
-        "yzhang.markdown-all-in-one"
+        "ms-python.python"
     ],
     "settings": {
         "python.envFile": "${HOME}/.pyenv"
