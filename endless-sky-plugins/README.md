@@ -1,12 +1,19 @@
+Introduction
+------------
+
+This is the VSCode Dev Container for endless-sky-plugins.  To start developing,
+open this folder with VSCode and you'll be prompted to start the Dev Container.
+You should drop into the Git repository root of [endless-sky-plugins][esp].
+
 How to open
 -----------
 
 Have the following repositories cloned at the same directory level:
 
-- `endless-sky-plugins`
-- `endless-sky-vscode-devcontainer`
+- [`endless-sky-plugins`][esp]
+- `endless-sky-vscode-devcontainer` (this repository)
 
-Here's a directory listing if you have it cloned correctly:
+The following directory tree shows a proper clone of both projects.
 
 ```
 endless-sky-plugins
@@ -68,3 +75,5 @@ environment you can run it too.
 [2-autoupdate-task]: https://user-images.githubusercontent.com/875669/156937373-420af816-f296-4b37-b621-55586090fbc9.png
 [3-run-without-scan]: https://user-images.githubusercontent.com/875669/156937372-834baa3d-44b0-4e15-9277-58721affc528.png
 [4-task-output]: https://user-images.githubusercontent.com/875669/156937371-7c2428b1-ef6b-4f10-aa8a-6b5205c2b0b3.png
+
+[esp]: https://github.com/EndlessSkyCommunity/endless-sky-plugins
