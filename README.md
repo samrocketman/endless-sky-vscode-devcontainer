@@ -8,44 +8,15 @@ projects.
 Available Dev Containers
 ------------------------
 
-- [endless-sky-plugins Dev Container](endless-sky-plugins) for the community
-  project [endless-sky-plugins][plugins].
+| Dev Container               | Upstream GitHub project    |
+| =========================== | ========================== |
+| [endless-sky-plugins][espc] | [endless-sky-plugins][esp] |
 
-[plugins]: https://github.com/EndlessSkyCommunity/endless-sky-plugins
+[espc]: endless-sky-plugins
+[esp]: https://github.com/EndlessSkyCommunity/endless-sky-plugins
 
+User Guide
+----------
 
-Local Dev Environment Setup
----------------------------
-
-All you need to have installed is:
-
-- [Docker Desktop][desktop] (for Windows/Mac) or [Docker Engine][engine] (Linux)
-- VSCode
-- VSCode extension: [`Remote - Containers`][ext] (VSCode will ask to
-  automatically install it for you when you open the project)
-
-On Linux, you may grant your user access to Docker by adding your own user to
-the Docker group.  However, this will reduce the security of your user.
-**WARNING:** Do this at your own risk.
-
-    usermod -a -G docker $USER
-
-[desktop]: https://www.docker.com/products/docker-desktop
-[engine]: https://docs.docker.com/engine/install/
-[ext]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
-
-About Dev Containers
---------------------
-
-Whether you're developing on Windows, Mac, or Linux you can have a fully
-integrated development environment with all dependencies available inside of a
-Docker runtime.
-
-> Please Note: VSCode does not currently support Windows containers on Windows
-> hosts.
-
-This project integrates [VSCode Dev Container][devc] with multiple Endless Sky
-official and community projects.
-
-[devc]: https://code.visualstudio.com/docs/remote/containers
-[es]: https://endless-sky.github.io/
+See also the [user guide](docs/userguide.md) for additional information and
+environment setup.
