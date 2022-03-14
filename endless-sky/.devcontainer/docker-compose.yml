@@ -16,4 +16,4 @@ services:
     volumes:
       - ../../../endless-sky:/workspace/endless-sky
       - .:/workspace/endless-sky/.devcontainer
-      - ../.vscode:/workspace/endless-sky-plugins/.vscode
+      - ../.vscode:/workspace/endless-sky/.vscode
