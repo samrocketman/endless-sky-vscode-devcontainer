@@ -1,0 +1,60 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        //scons -Qj $(nproc) opengl=desktop
+        {
+            "label": "Build: Compile Endless Sky OpenGL Desktop",
+            "type": "shell",
+            "command": "PS4='$ '; set -ex; scons -Qj $(nproc) opengl=desktop",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Test: Run tests",
+            "type": "shell",
+            "command": "PS4='$ '; set -ex; scons -Qj $(nproc) test",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "Test: Run benchmarks",
+            "type": "shell",
+            "command": "PS4='$ '; if [ ! -x ./tests/endless-sky-tests ]; then tput setaf 1; echo 'Execute `Build: Run tests` first...' >&2; tput sgr 0; exit 1; fi; set -ex; ./tests/endless-sky-tests '[!benchmark]'",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "Test: Run headless integration tests",
+            "type": "shell",
+            "command": "PS4='$ '; set -ex; export PRINT_GLXINFO=true;  ./tests/run_tests_headless.sh",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "Package: AppImage Continuous",
+            "type": "shell",
+            "command": "PS4='$ '; if ! git diff --exit-code credits.txt; then tput setaf 1; echo 'credits.txt has changes according to Git.  Reset it or commit before proceeding.' >&2; tput sgr 0; exit 1; fi; set -ex; ./utils/cd_update_versions.sh; ./utils/build_appimage.sh",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build: Clean and Reset Workspace",
+            "type": "shell",
+            "command": "PS4='$ '; set -x; scons -c; scons -c tests; rm -f *.AppImage endless-sky.png; git checkout credits.txt",
+            "problemMatcher": []
+        }
+    ]
+}

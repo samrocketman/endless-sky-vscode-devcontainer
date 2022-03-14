@@ -1,5 +1,14 @@
 {
     "dockerComposeFile": ["docker-compose.yml"],
     "workspaceFolder": "/workspace/endless-sky",
-    "service": "es-container"
+    "service": "es-container",
+    "extensions": [
+        "ms-vscode.cpptools-extension-pack",
+        "thomasballinger.endless-sky-vscode"
+    ],
+    "settings": {
+        "files.associations": {
+            "**/data/**/*.txt": "endlesssky"
+        }
+    }
 }

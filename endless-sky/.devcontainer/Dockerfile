@@ -10,6 +10,11 @@ RUN set -ex; \
 apt-get update; \
 apt-get install -y g++ scons libsdl2-dev libpng-dev libjpeg-dev libgl1-mesa-dev libglew-dev libopenal-dev libmad0-dev uuid-dev
 
+# Integration test dependencies
+RUN set -ex; \
+apt-get update; \
+apt-get install -y xvfb libosmesa6 mesa-utils
+
 # AppImage requirements
 RUN set -ex; \
 apt-get update; \
