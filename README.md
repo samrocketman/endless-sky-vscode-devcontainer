@@ -10,13 +10,9 @@ projects.
 Available Dev Containers
 ------------------------
 
-<p align=center>
-
 | Dev Container               | Upstream GitHub project                        |
 | --------------------------- | ---------------------------------------------- |
 | [endless-sky-plugins][espc] | [EndlessSkyCommunity/endless-sky-plugins][esp] |
-
-</p>
 
 [espc]: endless-sky-plugins
 [esp]: https://github.com/EndlessSkyCommunity/endless-sky-plugins
