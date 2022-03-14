@@ -1,0 +1,18 @@
+version: '3'
+services:
+  es-container:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: /bin/bash -c 'while sleep 1000; do true;done'
+    #--device /dev/fuse --cap-add SYS_ADMIN --security-opt apparmor:unconfined
+    devices:
+      - /dev/fuse
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - 'apparmor:unconfined'
+    volumes:
+      - ../../../endless-sky:/workspace/endless-sky
+      - .:/workspace/endless-sky/.devcontainer
+      - ../.vscode:/workspace/endless-sky-plugins/.vscode
