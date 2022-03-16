@@ -2,7 +2,8 @@ Pre-defined developer tasks
 ---------------------------
 
 You can have pre-defined developer tasks to help with development and testing.
-Since I've been working on `scripts/autoupdate.py` recently I decided to create
+Since I've been working on `scripts/autoupdate.py` recently within the
+[endless-sky-plugin][plugin-readme] I decided to create
 a task which makes it easy to run to test its functionality.  In a local VSCode
 environment you can run it too.
 
@@ -27,6 +28,4 @@ environment you can run it too.
 [2-autoupdate-task]: https://user-images.githubusercontent.com/875669/156937373-420af816-f296-4b37-b621-55586090fbc9.png
 [3-run-without-scan]: https://user-images.githubusercontent.com/875669/156937372-834baa3d-44b0-4e15-9277-58721affc528.png
 [4-task-output]: https://user-images.githubusercontent.com/875669/156937371-7c2428b1-ef6b-4f10-aa8a-6b5205c2b0b3.png
-
-[esp-tasks]: ../endless-sky-plugins/README.md
-
+[plugin-readme]: ../endless-sky-plugins/README.md
