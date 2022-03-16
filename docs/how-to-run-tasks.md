@@ -7,13 +7,20 @@ a task which makes it easy to run to test its functionality.  In a local VSCode
 environment you can run it too.
 
 1. In VSCode menu, select _Terminal > Run Task_.
+
    ![Screenshot of menu][1-run-task]
+
 2. Select a task to run.  For example, [`Run autoupdate.py on
    manifests`][esp-tasks].
+
    ![Screenshot of running task][2-autoupdate-task]
+
 3. Choose to `Continue without scanning the task output`.  You can also scan task output for errors but currently this is unconfigured.
+
    ![Screenshot of menu to run without scan output][3-run-without-scan]
+
 4. The task will run inside of the Docker container and you can view the terminal output.
+
    ![Screenshot of task output][4-task-output]
 
 [1-run-task]: https://user-images.githubusercontent.com/875669/156937374-451d7e44-d238-42fd-888c-719a84d429ab.png
