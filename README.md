@@ -12,10 +12,10 @@ Available Dev Containers
 
 | Dev Container               | Upstream GitHub project                        |
 | --------------------------- | ---------------------------------------------- |
-| [endless-sky][esc]          | [endless-sky/endless-sky][es-web]              |
+| [endless-sky][esc]          | [endless-sky/endless-sky][es-git]              |
 | [endless-sky-plugins][espc] | [EndlessSkyCommunity/endless-sky-plugins][esp] |
 
-[es-web]: https://github.com/endless-sky/endless-sky
+[es-git]: https://github.com/endless-sky/endless-sky
 [esc]: endless-sky
 [esp]: https://github.com/EndlessSkyCommunity/endless-sky-plugins
 [espc]: endless-sky-plugins
