@@ -3,6 +3,7 @@
     "workspaceFolder": "/workspace/endless-sky",
     "service": "es-container",
     "extensions": [
+        "davehart.quick-run-panel",
         "ms-vscode.cpptools-extension-pack",
         "thomasballinger.endless-sky-vscode"
     ],

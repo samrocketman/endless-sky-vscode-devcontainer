@@ -3,6 +3,7 @@
     "workspaceFolder": "/workspace/endless-sky-plugins",
     "service": "es-container",
     "extensions": [
+        "davehart.quick-run-panel",
         "ms-python.python"
     ],
     "settings": {
