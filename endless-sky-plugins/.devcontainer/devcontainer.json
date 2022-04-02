@@ -4,10 +4,12 @@
     "service": "es-container",
     "extensions": [
         "davehart.quick-run-panel",
-        "ms-python.python"
+        "mhutchie.git-graph",
+        "ms-python.python",
+        "shardulm94.trailing-spaces"
     ],
     "settings": {
-        "telemetry.telemetryLevel": "off",
-        "python.envFile": "${HOME}/.pyenv"
+        "python.envFile": "${HOME}/.pyenv",
+        "trailing-spaces.deleteModifiedLinesOnly": true
     }
 }

@@ -4,14 +4,16 @@
     "service": "es-container",
     "extensions": [
         "davehart.quick-run-panel",
+        "mhutchie.git-graph",
         "ms-vscode.cpptools-extension-pack",
+        "shardulm94.trailing-spaces",
         "thomasballinger.endless-sky-vscode"
     ],
     "settings": {
-        "telemetry.telemetryLevel": "off",
         "endlesssky.executablePath": "/workspace/endless-sky/endless-sky",
         "files.associations": {
             "**/data/**/*.txt": "endlesssky"
-        }
+        },
+        "trailing-spaces.deleteModifiedLinesOnly": true
     }
 }
