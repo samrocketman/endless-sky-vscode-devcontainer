@@ -19,14 +19,17 @@ VSCode Tasks
 All tasks are based on endless-sky GitHub actions.  See also [how to run tasks
 in VSCode][howto-tasks].
 
-| Task name                                 | Purpose                                            |
-| ----------------------------------------- | -------------------------------------------------- |
-| Build: Compile Endless Sky OpenGL Desktop | Build game                                         |
-| Build: Clean and Reset Workspace          | Removes build files<sup>1</sup>                    |
-| Test: Run tests                           | Execute unit tests and report result               |
-| Test: Run benchmarks                      | Runs benchmarks on the test executable<sup>2</sup> |
-| Test: Run headless integration tests      | Execute integration tests within Xvfb<sup>3</sup>  |
-| Package: AppImage Continuous              | Create an AppImage for running anywhere            |
+| Task name                                  | Purpose                                              |
+| ------------------------------------------ | ---------------------------------------------------- |
+| Format: clang-format-13 my changes         | Reformat my changes to match clang v13 code style.   |
+| Format: clang-format-13 endless-sky master | Reformat my changes since endless-sky master branch. |
+| Build: Compile Endless Sky OpenGL Desktop  | Build game                                           |
+| Build: Clean and Reset Workspace           | Removes build files<sup>1</sup>                      |
+| Test: Run tests                            | Execute unit tests and report result                 |
+| Test: Run benchmarks                       | Runs benchmarks on the test executable<sup>2</sup>   |
+| Test: Run headless integration tests       | Execute integration tests within Xvfb<sup>3</sup>    |
+| Package: Reset AppImage Continuous         | Reset git workspace for rebuilding AppImage.         |
+| Package: AppImage Continuous               | Create an AppImage for play testing on Linux.        |
 
 > **Notes:**
 > 1. Not fully complete.  Run `git clean -xfdn` for a dryrun clean.  You can run
