@@ -52,6 +52,12 @@
             }
         },
         {
+            "label": "Workspace: Reset AppImage Continuous",
+            "type": "shell",
+            "command": "PS4='$ '; set -e; for x in XCode/EndlessSky-Info.plist credits.txt endless-sky.6 source/main.cpp; do ( set -x; git checkout \"$x\"; ); done; set -x; rm -f *.AppImage",
+            "problemMatcher": []
+        }
+        {
             "label": "Package: AppImage Continuous",
             "type": "shell",
             "command": "PS4='$ '; if ! git diff --exit-code credits.txt; then tput setaf 1; echo 'credits.txt has changes according to Git.  Reset it or commit before proceeding.' >&2; tput sgr 0; exit 1; fi; set -ex; ./utils/cd_update_versions.sh; ./utils/build_appimage.sh",
