@@ -2,6 +2,18 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Format: clang-format-13 my changes",
+            "type": "shell",
+            "command": "PS4='$ '; git-clang-format-13 --binary clang-format-13",
+            "problemMatcher": []
+        },
+        {
+            "label": "Format: clang-format-13 endless-sky master",
+            "type": "shell",
+            "command": "PS4='$ '; set -ex; git fetch https://github.com/endless-sky/endless-sky.git master; git-clang-format-13 --binary clang-format-13 --commit $(git merge-base FETCH_HEAD HEAD)",
+            "problemMatcher": []
+        },
+        {
             "label": "Build: Compile Endless Sky OpenGL Desktop",
             "type": "shell",
             "command": "PS4='$ '; set -ex; scons -Qj $(nproc) opengl=desktop",
@@ -52,11 +64,11 @@
             }
         },
         {
-            "label": "Workspace: Reset AppImage Continuous",
+            "label": "Package: Reset AppImage Continuous",
             "type": "shell",
             "command": "PS4='$ '; set -e; for x in XCode/EndlessSky-Info.plist credits.txt endless-sky.6 source/main.cpp; do ( set -x; git checkout \"$x\"; ); done; set -x; rm -f *.AppImage",
             "problemMatcher": []
-        }
+        },
         {
             "label": "Package: AppImage Continuous",
             "type": "shell",

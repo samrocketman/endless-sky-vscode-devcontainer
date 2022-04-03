@@ -23,10 +23,25 @@ apt-get install -y curl fuse libfuse2
 # Additional Dev Tools
 RUN set -ex; \
 apt-get update; \
-apt-get install -y git
+apt-get install -y git gnupg2
+
+# Install clang-format v13
+ADD clang-13.list /etc/apt/sources.list.d/
+RUN set -ex; \
+curl -sSfL https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -; \
+apt-get update; \
+apt-get install -y clang-format-13
+
+# Sound utilities
+RUN set -ex; \
+apt-get update; \
+apt-get install -y alsa-base pulseaudio libasound2-plugins
 
 # assumes UID 1000
-RUN adduser es-user
+RUN set -ex; \
+adduser es-user; \
+usermod -a -G audio es-user
+
 USER es-user
 WORKDIR /home/es-user
 CMD /bin/bash

@@ -8,8 +8,8 @@ services:
     command: /bin/bash -c 'while sleep 1000;do true;done'
     #--device /dev/fuse --cap-add SYS_ADMIN --security-opt apparmor:unconfined
     devices:
-      - /dev/fuse
       - /dev/dri
+      - /dev/fuse
       - /dev/snd
     cap_add:
       - SYS_ADMIN
@@ -17,8 +17,9 @@ services:
       - 'apparmor:unconfined'
     volumes:
       - ../../../endless-sky:/workspace/endless-sky
-      - .:/workspace/endless-sky/.devcontainer
       - ../.vscode:/workspace/endless-sky/.vscode
+      - .:/workspace/endless-sky/.devcontainer
+      - ./clang-format:/workspace/endless-sky/.clang-format
       - /tmp/.X11-unix:/tmp/.X11-unix
     environment:
       DISPLAY: $DISPLAY
