@@ -49,4 +49,13 @@ usermod -a -G audio es-user
 
 USER es-user
 WORKDIR /home/es-user
+
+# Install Endless Sky plugins for developer testing
+RUN set -ex; \
+if [ ! -d ~/.local/share/endless-sky/plugins/all-content-plugin ]; then \
+    mkdir -p ~/.local/share/endless-sky/plugins; \
+    cd ~/.local/share/endless-sky/plugins; \
+    git clone https://github.com/endless-sky/all-content-plugin.git; \
+fi
+
 CMD /bin/bash

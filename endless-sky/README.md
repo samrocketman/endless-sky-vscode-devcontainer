@@ -21,8 +21,9 @@ in VSCode][howto-tasks].
 
 | Task name                                  | Purpose                                              |
 | ------------------------------------------ | ---------------------------------------------------- |
-| Format: clang-format-13 my changes         | Reformat my changes to match clang v13 code style.   |
-| Format: clang-format-13 endless-sky master | Reformat my changes since endless-sky master branch. |
+| Code: clang-format-13 my changes           | Reformat my changes to match clang v13 code style.   |
+| Code: clang-format-13 endless-sky master   | Reformat my changes since endless-sky master branch. |
+| Code: Merge upstream ES master             | Update your branch with endless-sky master changes.  |
 | Build: Compile Endless Sky OpenGL Desktop  | Build game                                           |
 | Build: Clean and Reset Workspace           | Removes build files<sup>1</sup>                      |
 | Test: Run tests                            | Execute unit tests and report result                 |
