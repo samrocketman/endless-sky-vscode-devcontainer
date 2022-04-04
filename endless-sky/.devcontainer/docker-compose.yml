@@ -21,5 +21,7 @@ services:
       - .:/workspace/endless-sky/.devcontainer
       - ./clang-format:/workspace/endless-sky/.clang-format
       - /tmp/.X11-unix:/tmp/.X11-unix
+      - /run/user/${UID:-1000}/pulse/native:/run/user/${UID:-1000}/pulse/native
     environment:
       DISPLAY: $DISPLAY
+      PULSE_SERVER: unix:/run/user/${UID:-1000}/pulse/native
