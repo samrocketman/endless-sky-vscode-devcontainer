@@ -3,6 +3,7 @@
     "workspaceFolder": "/workspace/endless-sky-plugins",
     "service": "es-container",
     "extensions": [
+        "Gruntfuggly.todo-tree",
         "davehart.quick-run-panel",
         "mhutchie.git-graph",
         "ms-python.python",

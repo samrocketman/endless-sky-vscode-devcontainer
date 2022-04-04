@@ -3,6 +3,7 @@
     "workspaceFolder": "/workspace/endless-sky",
     "service": "es-container",
     "extensions": [
+        "Gruntfuggly.todo-tree",
         "davehart.quick-run-panel",
         "mhutchie.git-graph",
         "ms-vscode.cpptools-extension-pack",
