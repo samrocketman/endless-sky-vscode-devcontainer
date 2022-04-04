@@ -16,7 +16,7 @@
         {
             "label": "Build: Compile Endless Sky OpenGL Desktop",
             "type": "shell",
-            "command": "PS4='$ '; set -ex; scons -Qj $(nproc) opengl=desktop",
+            "command": "PS4='$ '; set -ex; scons -Qj $(nproc) opengl=desktop mode=debug",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
