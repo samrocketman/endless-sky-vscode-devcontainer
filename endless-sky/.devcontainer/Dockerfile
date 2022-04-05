@@ -52,10 +52,9 @@ WORKDIR /home/es-user
 
 # Install Endless Sky plugins for developer testing
 RUN set -ex; \
-if [ ! -d ~/.local/share/endless-sky/plugins/all-content-plugin ]; then \
-    mkdir -p ~/.local/share/endless-sky/plugins; \
-    cd ~/.local/share/endless-sky/plugins; \
-    git clone https://github.com/endless-sky/all-content-plugin.git; \
-fi
+mkdir -p ~/.local/share/endless-sky/plugins; \
+cd ~/.local/share/endless-sky/plugins; \
+git clone https://github.com/endless-sky/all-content-plugin.git; \
+git clone https://github.com/Adde-Endless-Sky/AES-Omnis.git
 
 CMD /bin/bash
