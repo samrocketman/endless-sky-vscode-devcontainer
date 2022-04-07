@@ -20,6 +20,16 @@
             "problemMatcher": []
         },
         {
+            "label": "Build: Clean and Reset Workspace",
+            "type": "shell",
+            "command": "PS4='$ '; set -x; scons -c; scons -c tests; rm -f *.AppImage endless-sky.png; git checkout credits.txt XCode/EndlessSky-Info.plist endless-sky.6 source/main.cpp",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
             "label": "Build: Compile Endless Sky OpenGL Desktop",
             "type": "shell",
             "command": "PS4='$ '; set -ex; scons -Qj $(nproc) opengl=desktop mode=debug",
@@ -27,16 +37,6 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
-        },
-        {
-            "label": "Build: Clean and Reset Workspace",
-            "type": "shell",
-            "command": "PS4='$ '; set -x; scons -c; scons -c tests; rm -f *.AppImage endless-sky.png; git checkout credits.txt",
-            "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": false
             }
         },
         {
@@ -54,6 +54,9 @@
             "type": "shell",
             "command": "PS4='$ '; if [ ! -x ./tests/endless-sky-tests ]; then tput setaf 1; echo 'Execute `Build: Run tests` first...' >&2; tput sgr 0; exit 1; fi; set -ex; ./tests/endless-sky-tests '[!benchmark]'",
             "problemMatcher": [],
+            "dependsOn": [
+                "Test: Run tests"
+            ],
             "group": {
                 "kind": "test",
                 "isDefault": false
@@ -64,6 +67,9 @@
             "type": "shell",
             "command": "PS4='$ '; set -ex; export PRINT_GLXINFO=true;  ./tests/run_tests_headless.sh",
             "problemMatcher": [],
+            "dependsOn": [
+                "Build: Compile Endless Sky OpenGL Desktop"
+            ],
             "group": {
                 "kind": "test",
                 "isDefault": false
@@ -72,7 +78,7 @@
         {
             "label": "Package: Reset AppImage Continuous",
             "type": "shell",
-            "command": "PS4='$ '; set -e; for x in XCode/EndlessSky-Info.plist credits.txt endless-sky.6 source/main.cpp; do ( set -x; git checkout \"$x\"; ); done; set -x; rm -f *.AppImage",
+            "command": "PS4='$ '; set -e; for x in XCode/EndlessSky-Info.plist credits.txt endless-sky.6 source/main.cpp; do ( set -x; git checkout \"$x\"; ); done",
             "problemMatcher": []
         },
         {
