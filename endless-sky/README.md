@@ -10,6 +10,7 @@ Requirements
 
 - Linux host
 - X11 display server
+- PulseAudio sound system
 
 See also the [user guide](../docs/userguide.md).
 
