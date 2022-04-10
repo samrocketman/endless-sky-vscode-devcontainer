@@ -25,11 +25,16 @@ Features for developing Endless Sky
 
 The following features are available in the [endless-sky devcontainer][esc].
 
-* `F5` keyboard shortcut will create a debug build of endless-sky and launch it with a debugger attached.
-* Run the same tasks as GitHub actions for pull requests.
-* Tasks to automatically reformat your code in the same code style as the rest of the project (reducing review friction).
-* Fetch and automatically merged upstream endless-sky `master` branch.
-* Automated `TODO` list navigation.  When opening a file you'll get a list of all commented TODOs in code.
+- `F5` keyboard shortcut will create a debug build of endless-sky and launch it
+  with a debugger attached.
+- Run the same tasks as GitHub actions for pull requests.
+- Tasks to automatically reformat your code in the same code style as the rest
+  of the project (reducing review friction).
+- Fetch and automatically merged upstream endless-sky `master` branch.
+- Automated `TODO` list navigation.  When opening a file you'll get a list of
+  all commented TODOs in code.
+- Graphical Git tree to easily see your code relative to other branches in
+  endless-sky.
 
 User Guide
 ----------
