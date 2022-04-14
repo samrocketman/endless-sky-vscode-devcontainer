@@ -86,6 +86,12 @@
             "type": "shell",
             "command": "PS4='$ '; if ! git diff --exit-code credits.txt; then tput setaf 1; echo 'credits.txt has changes according to Git.  Reset it or commit before proceeding.' >&2; tput sgr 0; exit 1; fi; set -ex; ./utils/cd_update_versions.sh; ./utils/build_appimage.sh",
             "problemMatcher": []
+        },
+        {
+            "label": "ES Plugin: Install reveal map plugin",
+            "type": "shell",
+            "command": "PS4='$ '; set -x;mkdir -p ~/.local/share/endless-sky/plugins/dev-mode-reveal-map/data; set +x; echo -e 'mission \"Dev mode: reveal map\"\\n\\tinvisible\\n\\tlanding\\n\\tdestination Earth\\n\\tto offer\\n\\t\\trandom >= 0\\n\\ton offer\\n\\t\\tevent \"Dev mode: visit systems\"\\nevent \"Dev mode: visit systems\"' | tee ~/.local/share/endless-sky/plugins/dev-mode-reveal-map/data/event.txt; grep -r ^system data | cut -d: -f2 | sed 's/^system/\tvisit/' | tee -a ~/.local/share/endless-sky/plugins/dev-mode-reveal-map/data/event.txt",
+            "problemMatcher": []
         }
     ]
 }

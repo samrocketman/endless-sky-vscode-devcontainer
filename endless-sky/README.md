@@ -32,6 +32,7 @@ in VSCode][howto-tasks].
 | Test: Run headless integration tests       | Execute integration tests within Xvfb                |
 | Package: Reset AppImage Continuous         | Reset git workspace for rebuilding AppImage.         |
 | Package: AppImage Continuous               | Create an AppImage for play testing on Linux.        |
+| ES Plugin: Install reveal map plugin       | Create an ES plugin for revealing map.               |
 
 You can find defined tasks in [`.vscode/tasks.json`](.vscode/tasks.json).
 
