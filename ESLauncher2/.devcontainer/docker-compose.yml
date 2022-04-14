@@ -1,0 +1,26 @@
+version: '3'
+services:
+  es-container:
+    init: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: /bin/bash -c 'while sleep 1000;do true;done'
+    #--device /dev/fuse --cap-add SYS_ADMIN --security-opt apparmor:unconfined
+    devices:
+      - /dev/dri
+      - /dev/fuse
+      - /dev/snd
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - 'apparmor:unconfined'
+    volumes:
+      - ../../../ESLauncher2:/workspace/ESLauncher2
+      - ../.vscode:/workspace/ESLauncher2/.vscode
+      - .:/workspace/ESLauncher2/.devcontainer
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /run/user/${UID:-1000}/pulse/native:/run/user/${UID:-1000}/pulse/native
+    environment:
+      DISPLAY: $DISPLAY
+      PULSE_SERVER: unix:/run/user/${UID:-1000}/pulse/native

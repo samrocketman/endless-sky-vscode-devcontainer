@@ -1,0 +1,16 @@
+{
+    "dockerComposeFile": ["docker-compose.yml"],
+    "workspaceFolder": "/workspace/ESLauncher2",
+    "service": "es-container",
+    "extensions": [
+        "Gruntfuggly.todo-tree",
+        "davehart.quick-run-panel",
+        "matklad.rust-analyzer",
+        "mhutchie.git-graph",
+        "shardulm94.trailing-spaces",
+        "vadimcn.vscode-lldb"
+    ],
+    "settings": {
+        "trailing-spaces.deleteModifiedLinesOnly": true
+    }
+}
