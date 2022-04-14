@@ -90,7 +90,7 @@
         {
             "label": "ES Plugin: Install reveal map plugin",
             "type": "shell",
-            "command": "PS4='$ '; set -x;mkdir -p ~/.local/share/endless-sky/plugins/dev-mode-reveal-map/data; set +x; echo -e 'mission \"Dev mode: reveal map\"\\n\\tinvisible\\n\\tlanding\\n\\tdestination Earth\\n\\tto offer\\n\\t\\trandom >= 0\\n\\ton offer\\n\\t\\tevent \"Dev mode: visit systems\"\\nevent \"Dev mode: visit systems\"' | tee ~/.local/share/endless-sky/plugins/dev-mode-reveal-map/data/event.txt; grep -r ^system data | cut -d: -f2 | sed 's/^system/\tvisit/' | tee -a ~/.local/share/endless-sky/plugins/dev-mode-reveal-map/data/event.txt",
+            "command": "PS4='$ '; set -x;mkdir -p ~/.local/share/endless-sky/plugins/dev-mode-reveal-map/data; set +x; echo -e 'mission \"Dev mode: reveal map\"\\n\\tinvisible\\n\\tlanding\\n\\tdestination Earth\\n\\tto offer\\n\\t\\trandom >= 0\\n\\ton offer\\n\\t\\tevent \"Dev mode: visit systems\"\\nevent \"Dev mode: visit systems\"' | tee ~/.local/share/endless-sky/plugins/dev-mode-reveal-map/data/event.txt; grep -r ^system data | cut -d: -f2 | sed 's/^system/\tvisit/' | tee -a ~/.local/share/endless-sky/plugins/dev-mode-reveal-map/data/event.txt; echo 'Reveal the entire map when leaving any planet.  This will ruin any existing save games by revealing spoilers so use with care.' > ~/.local/share/endless-sky/plugins/dev-mode-reveal-map/about.txt",
             "problemMatcher": []
         }
     ]
