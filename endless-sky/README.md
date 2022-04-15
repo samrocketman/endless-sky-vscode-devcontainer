@@ -22,6 +22,8 @@ in VSCode][howto-tasks].
 
 | Task name                                  | Purpose                                              |
 | ------------------------------------------ | ---------------------------------------------------- |
+| ES Data: Run Conversation                  | Open Endless Sky and directly run the conversation.  |
+| ES Data: Insert Snippet                    | Generate an object, fleet, or snippet in a txt file. |
 | Code: clang-format-13 my changes           | Reformat my changes to match clang v13 code style.   |
 | Code: clang-format-13 endless-sky master   | Reformat my changes since endless-sky master branch. |
 | Code: Merge upstream ES master             | Update your branch with endless-sky master changes.  |
