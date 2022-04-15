@@ -2,6 +2,17 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "ES Data: Run Conversation",
+            "command": "${command:endlesssky.talk}",
+            "dependsOn": [
+                "Build: Compile Endless Sky OpenGL Desktop"
+            ]
+        },
+        {
+            "label": "ES Data: Insert Snippet",
+            "command": "${command:editor.action.insertSnippet}",
+        },
+        {
             "label": "Code: clang-format-13 my changes",
             "type": "shell",
             "command": "PS4='$ '; git-clang-format-13 --binary clang-format-13",
