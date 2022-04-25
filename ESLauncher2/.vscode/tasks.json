@@ -6,6 +6,18 @@
             "type": "shell",
             "command": "PS4='$ '; cargo build --verbose --release",
             "problemMatcher": []
+        },
+        {
+            "label": "Package: Clean DEB and RPM",
+            "type": "shell",
+            "command": "PS4='$ '; rm -f *.deb *.rpm",
+            "problemMatcher": []
+        },
+        {
+            "label": "Package: DEB and RPM",
+            "type": "shell",
+            "command": "PS4='$ '; ./packaging/create-packages.sh 0.0.1",
+            "problemMatcher": []
         }
     ]
 }

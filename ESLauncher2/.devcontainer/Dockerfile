@@ -10,6 +10,11 @@ RUN set -ex; \
 apt-get update; \
 apt-get install -y libasound2-dev build-essential pkg-config libsdl2-dev libpng-dev libjpeg-dev libgl1-mesa-dev libglew-dev libopenal-dev libmad0-dev uuid-dev
 
+# DEB and RPM packaging requirements
+RUN set -ex; \
+apt-get install -y ruby ruby-dev rubygems build-essential rpm; \
+gem install --no-document fpm
+
 # AppImage requirements
 RUN set -ex; \
 apt-get update; \

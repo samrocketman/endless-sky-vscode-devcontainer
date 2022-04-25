@@ -5,9 +5,11 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceRoot}/target/release/eslauncher2",
-            "args": [],
-            "cwd": "${workspaceRoot}/target/release/",
+            "cargo": {
+                "args": [
+                    "run"
+                ]
+            },
             "sourceLanguages": ["rust"]
         }
     ]
