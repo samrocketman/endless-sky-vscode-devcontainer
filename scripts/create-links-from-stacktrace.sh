@@ -2,6 +2,7 @@
 # Created by Sam Gleske (@samrocketman on GitHub)
 # Created Tue 24 May 2022 10:57:17 AM EDT
 # MIT Licensed
+
 # DEVELOPMENT ENVIRONMENT
 #     Ubuntu 20.04.4 LTS
 #     Linux 5.13.0-40-generic x86_64
@@ -10,7 +11,14 @@
 #     grep (GNU grep) 3.4
 #     cat (GNU coreutils) 8.30
 
-# link https://github.com/endless-sky/endless-sky/blob/e7151f423136300f6b528a1717b3e2260aac9b52/.appveyor.yml
+# DESCRIPTION
+#     Create a list of GitHub links to source code when provided a dump file
+#     containing a stacktrace paired with a Git commit of the build when it
+#     crashed.
+
+# EXAMPLE USAGE
+#     ./create-links-from-stacktrace.sh --commit e7151f423136300f6b528a1717b3e2260aac9b52 --tracefile ./file.dump
+
 # ENVIRONMENT VARIABLES (can be overridden by user)
 ENDLESS_SKY_URL="${ENDLESS_SKY_URL:-https://github.com/endless-sky/endless-sky/blob}"
 
