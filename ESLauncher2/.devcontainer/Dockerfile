@@ -12,7 +12,7 @@ apt-get install -y libasound2-dev build-essential pkg-config libsdl2-dev libpng-
 
 # DEB and RPM packaging requirements
 RUN set -ex; \
-apt-get install -y ruby ruby-dev rubygems build-essential rpm; \
+apt-get install -y ruby ruby-dev rubygems build-essential rpm libarchive-tools zstd; \
 gem install --no-document fpm
 
 # AppImage requirements
