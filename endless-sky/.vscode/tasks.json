@@ -19,6 +19,12 @@
             "problemMatcher": []
         },
         {
+            "label": "Code: clang-format-13 HEAD commit only",
+            "type": "shell",
+            "command": "PS4='$ '; set -ex; git-clang-format-13 --binary clang-format-13 --commit HEAD~1",
+            "problemMatcher": []
+        },
+        {
             "label": "Code: clang-format-13 endless-sky master",
             "type": "shell",
             "command": "PS4='$ '; set -ex; git fetch https://github.com/endless-sky/endless-sky.git master; git-clang-format-13 --binary clang-format-13 --commit $(git merge-base FETCH_HEAD HEAD)",
@@ -76,7 +82,7 @@
         {
             "label": "Test: Run headless integration tests",
             "type": "shell",
-            "command": "PS4='$ '; set -ex; export PRINT_GLXINFO=true;  ./tests/run_tests_headless.sh",
+            "command": "PS4='$ '; set -ex; export PRINT_GLXINFO=true;  ./tests/integration/run_tests_headless.sh",
             "problemMatcher": [],
             "dependsOn": [
                 "Build: Compile Endless Sky OpenGL Desktop"
