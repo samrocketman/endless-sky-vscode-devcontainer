@@ -4,6 +4,7 @@ endless-sky-tests
 libendless-sky.a
 *.exe
 *.lnk
+*.AppImage
 
 # dlls needed to run the binary
 *.dll
@@ -29,7 +30,7 @@ scons-local*
 test-report.xml
 
 # User-installed plugins
-plugins/
+/plugins/
 
 # OS-specific generated files
 .DS_Store
@@ -37,6 +38,7 @@ plugins/
 
 # IDEs (no support implied)
 .cache
+.devcontainer
 .vscode
 .vs
 .metadata
@@ -67,7 +69,5 @@ compile_commands.json
 
 # IDE-related files for https://github.com/samrocketman/endless-sky-vscode-devcontainer
 /.clang-format
-*.AppImage
-.devcontainer
 # and also ignore this file since it is injected within the container
 # git update-index --assume-unchanged .gitignore
