@@ -18,7 +18,7 @@ apt-get install -y xvfb libosmesa6 mesa-utils
 # AppImage requirements
 RUN set -ex; \
 apt-get update; \
-apt-get install -y curl fuse libfuse2
+apt-get install -y curl fuse libfuse2 rsync
 
 # Additional Dev Tools
 RUN set -ex; \
@@ -49,6 +49,11 @@ usermod -a -G audio es-user
 
 USER es-user
 WORKDIR /home/es-user
+
+# set up global gitignore
+RUN set -ex; \
+mkdir -p .config/git; \
+echo '.clang-format' > .config/git/ignore
 
 # Install Endless Sky plugins for developer testing
 RUN set -ex; \
