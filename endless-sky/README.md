@@ -25,8 +25,10 @@ in VSCode][howto-tasks].
 | ES Data: Run Conversation                  | Open Endless Sky and directly run the conversation.  |
 | ES Data: Insert Snippet                    | Generate an object, fleet, or snippet in a txt file. |
 | Code: clang-format-13 my changes           | Reformat my changes to match clang v13 code style.   |
+| Code: clang-format-13 HEAD commit only     | Reformat only your current commit.                   |
 | Code: clang-format-13 endless-sky master   | Reformat my changes since endless-sky master branch. |
 | Code: Merge upstream ES master             | Update your branch with endless-sky master changes.  |
+| Code: Update XCode with upstream master    | Update XCode project with added C++ classes.         |
 | Build: Clean and Reset Workspace           | Removes build files                                  |
 | Build: Compile Endless Sky OpenGL Desktop  | Build game                                           |
 | Test: Run tests                            | Execute unit tests and report result                 |

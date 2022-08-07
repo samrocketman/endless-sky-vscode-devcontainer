@@ -10,7 +10,7 @@
         },
         {
             "label": "ES Data: Insert Snippet",
-            "command": "${command:editor.action.insertSnippet}",
+            "command": "${command:editor.action.insertSnippet}"
         },
         {
             "label": "Code: clang-format-13 my changes",
@@ -34,6 +34,12 @@
             "label": "Code: Merge upstream ES master",
             "type": "shell",
             "command": "PS4='$ '; if ! git diff-index --quiet HEAD --; then tput setaf 1; echo 'ERROR: Commit or stash your changes before proceeding.' >&2; tput sgr 0; exit 1;fi;set -ex; git fetch https://github.com/endless-sky/endless-sky.git master; if git merge-base --is-ancestor FETCH_HEAD HEAD; then set +x;tput setaf 2; echo 'Nothing to do!  You are up to date with endless-sky master.'; tput sgr 0; else git merge --no-ff FETCH_HEAD -m \"Merge branch 'master' into $(git symbolic-ref --short HEAD)\"; set +x;tput setaf 2; echo 'Success!  Your branch has been updated with endless-sky master.'; tput sgr 0; fi",
+            "problemMatcher": []
+        },
+        {
+            "label": "Code: Update XCode with upstream master",
+            "type": "shell",
+            "command": "PS4='$ '; source ~/venv/bin/activate; set -ex; git fetch https://github.com/endless-sky/endless-sky.git master; git checkout FETCH_HEAD EndlessSky.xcodeproj/project.pbxproj; ./utils/check_xcode.sh || rm xcode-project.patch",
             "problemMatcher": []
         },
         {
