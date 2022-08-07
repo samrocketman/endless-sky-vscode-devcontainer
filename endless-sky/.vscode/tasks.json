@@ -39,7 +39,7 @@
         {
             "label": "Code: Update XCode with upstream master",
             "type": "shell",
-            "command": "PS4='$ '; source ~/venv/bin/activate; set -ex; git fetch https://github.com/endless-sky/endless-sky.git master; git checkout FETCH_HEAD EndlessSky.xcodeproj/project.pbxproj; ./utils/check_xcode.sh || rm xcode-project.patch",
+            "command": "PS4='$ '; source ~/venv/bin/activate; set -ex; git fetch https://github.com/endless-sky/endless-sky.git master; git checkout FETCH_HEAD EndlessSky.xcodeproj/project.pbxproj; ./utils/check_xcode.sh && git checkout HEAD EndlessSky.xcodeproj/project.pbxproj || rm xcode-project.patch",
             "problemMatcher": []
         },
         {
