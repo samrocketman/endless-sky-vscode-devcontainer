@@ -1,6 +1,15 @@
 version: '3'
+volumes:
+  sonar-conf:
+  sonar-extensions:
+  sonar-data:
+networks:
+  internal:
+    driver: bridge
 services:
   es-container:
+    depends_on:
+      - sonarqube
     init: true
     build:
       context: .
@@ -15,7 +24,10 @@ services:
       - SYS_ADMIN
     security_opt:
       - 'apparmor:unconfined'
+    networks:
+      - internal
     volumes:
+#      - $HOME/.local/share/endless-sky:/home/es-user/.local/share/endless-sky
       - ../../../endless-sky:/workspace/endless-sky
       - ../.vscode:/workspace/endless-sky/.vscode
       - .:/workspace/endless-sky/.devcontainer
@@ -25,3 +37,15 @@ services:
     environment:
       DISPLAY: $DISPLAY
       PULSE_SERVER: unix:/run/user/${UID:-1000}/pulse/native
+  sonarqube:
+    init: true
+    # https://hub.docker.com/_/sonarqube/
+    image: sonarqube
+    networks:
+      - internal
+    volumes:
+      - sonar-conf:/opt/sonarqube/conf
+      - sonar-extensions:/opt/sonarqube/extensions
+      - sonar-data:/opt/sonarqube/data
+    ports:
+      - localhost:9000:9000
