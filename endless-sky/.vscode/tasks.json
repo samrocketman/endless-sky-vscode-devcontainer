@@ -34,7 +34,23 @@
             "label": "Style: GitHub Action Style Checker",
             "type": "shell",
             "command": "PS4='$ '; set -ex; python ./utils/check_code_style.py",
-            "problemMatcher": []
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": ["relative", "${workspaceFolder}"],
+                "pattern": [
+                    {
+                        "regexp": "^(.*\\.(h|cpp))$",
+                        "file": 1
+                    },
+                    {
+                        "regexp": "^\\s+(ERROR|WARNING): line (\\d+):\\s+(.*) in '.*'$",
+                        "severity": 1,
+                        "line": 2,
+                        "message": 3,
+                        "loop": true
+                    }
+                ]
+            }
         },
         {
             "label": "Code: Merge upstream ES master",
