@@ -45,7 +45,7 @@ apt-get install -y alsa-base pulseaudio libasound2-plugins
 # Mac OS and packaging dependencies
 RUN set -ex; \
 apt-get update; \
-apt-get install -y python3.8-venv
+apt-get install -y python3.9 python3.9-venv
 
 # assumes UID 1000
 RUN set -ex; \
@@ -57,10 +57,11 @@ WORKDIR /home/es-user
 
 # set up Mac OS XCode support
 RUN set -ex; \
-python3 -m venv ~/venv; \
+python3.9 -m venv ~/venv; \
 . ~/venv/bin/activate; \
 pip install wheel==0.37.1; \
 pip install docopt==0.6.2 openstep-parser==1.5.3 pbxproj==3.4.0; \
+pip install regex; \
 echo 'source ~/venv/bin/activate' >> ~/.bashrc
 
 # set up global gitignore

@@ -13,21 +13,27 @@
             "command": "${command:editor.action.insertSnippet}"
         },
         {
-            "label": "Code: clang-format-13 my changes",
+            "label": "Style: clang-format-13 my changes",
             "type": "shell",
             "command": "PS4='$ '; git-clang-format-13 --binary clang-format-13",
             "problemMatcher": []
         },
         {
-            "label": "Code: clang-format-13 HEAD commit only",
+            "label": "Style: clang-format-13 HEAD commit only",
             "type": "shell",
             "command": "PS4='$ '; set -ex; git-clang-format-13 --binary clang-format-13 --commit HEAD~1",
             "problemMatcher": []
         },
         {
-            "label": "Code: clang-format-13 endless-sky master",
+            "label": "Style: clang-format-13 endless-sky master",
             "type": "shell",
             "command": "PS4='$ '; set -ex; git fetch https://github.com/endless-sky/endless-sky.git master; git-clang-format-13 --binary clang-format-13 --commit $(git merge-base FETCH_HEAD HEAD)",
+            "problemMatcher": []
+        },
+        {
+            "label": "Style: GitHub Action Style Checker",
+            "type": "shell",
+            "command": "PS4='$ '; set -ex; python ./utils/check_code_style.py",
             "problemMatcher": []
         },
         {
