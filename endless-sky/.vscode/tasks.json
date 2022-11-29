@@ -33,7 +33,7 @@
         {
             "label": "Style: GitHub Action Style Checker",
             "type": "shell",
-            "command": "PS4='$ '; set -ex; python ./utils/check_code_style.py",
+            "command": "PS4='$ '; set -ex; git fetch https://github.com/endless-sky/endless-sky.git master; ( git diff --name-only $(git merge-base FETCH_HEAD HEAD) HEAD '*.cpp' '*.h'; git diff --name-only '*.cpp' '*.h' ) | grep -v '^$' | sort -u | xargs -r python ./utils/check_code_style.py",
             "problemMatcher": {
                 "owner": "cpp",
                 "fileLocation": ["relative", "${workspaceFolder}"],
