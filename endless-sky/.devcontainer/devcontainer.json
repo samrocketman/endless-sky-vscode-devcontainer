@@ -10,9 +10,9 @@
         "ms-vscode.cpptools-extension-pack",
         "shardulm94.trailing-spaces",
         "thomasballinger.endless-sky-vscode",
-		"fredericbonnet.cmake-test-adapter",
-		"EditorConfig.EditorConfig",
-		"redhat.vscode-yaml"
+        "fredericbonnet.cmake-test-adapter",
+        "EditorConfig.EditorConfig",
+        "redhat.vscode-yaml"
     ],
     "settings": {
         "endlesssky.executablePath": "/workspace/endless-sky/endless-sky",

@@ -29,7 +29,7 @@ RUN \
 # AppImage requirements
 RUN \
   apt-get update; \
-  apt-get install -y curl rsync
+  apt-get install -y rsync
 
 # Additional Dev Tools
 RUN \
