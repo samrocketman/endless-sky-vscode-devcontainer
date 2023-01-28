@@ -1,0 +1,47 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "docker",
+      "displayName": "Devcontainer",
+      "inherits": "linux",
+      "cacheVariables": {
+        "ES_USE_SYSTEM_LIBRARIES": "OFF"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "docker-debug",
+      "displayName": "Debug",
+      "configurePreset": "docker",
+      "inherits": "debug"
+    },
+    {
+      "name": "docker-release",
+      "displayName": "Release",
+      "configurePreset": "docker",
+      "inherits": "release"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "docker-test",
+      "displayName": "Tests",
+      "configurePreset": "docker",
+      "inherits": "test"
+    },
+    {
+      "name": "docker-benchmark",
+      "displayName": "Benchmarks",
+      "configurePreset": "docker",
+      "inherits": "benchmark"
+    },
+    {
+      "name": "docker-integration",
+      "displayName": "Integration Tests",
+      "configurePreset": "docker",
+      "inherits": "integration"
+    }
+  ]
+}
