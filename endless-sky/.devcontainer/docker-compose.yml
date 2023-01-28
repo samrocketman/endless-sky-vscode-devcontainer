@@ -20,6 +20,7 @@ services:
       - ../.vscode:/workspace/endless-sky/.vscode
       - .:/workspace/endless-sky/.devcontainer
       - ./clang-format:/workspace/endless-sky/.clang-format
+      - ./CMakeUserPresets.json:/workspace/endless-sky/CMakeUserPresets.json
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /run/user/${UID:-1000}/pulse/native:/run/user/${UID:-1000}/pulse/native
     environment:

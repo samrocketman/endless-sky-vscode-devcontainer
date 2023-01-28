@@ -3,10 +3,7 @@
     "tasks": [
         {
             "label": "ES Data: Run Conversation",
-            "command": "${command:endlesssky.talk}",
-            "dependsOn": [
-                "Build: Compile Endless Sky OpenGL Desktop"
-            ]
+            "command": "${command:endlesssky.talk}"
         },
         {
             "label": "ES Data: Insert Snippet",
@@ -59,64 +56,12 @@
             "problemMatcher": []
         },
         {
-            "label": "Code: Update XCode with upstream master",
-            "type": "shell",
-            "command": "PS4='$ '; source ~/venv/bin/activate; set -ex; git fetch https://github.com/endless-sky/endless-sky.git master; git checkout FETCH_HEAD EndlessSky.xcodeproj/project.pbxproj; ./utils/check_xcode.sh && git checkout HEAD EndlessSky.xcodeproj/project.pbxproj || rm xcode-project.patch",
-            "problemMatcher": []
-        },
-        {
             "label": "Build: Clean and Reset Workspace",
             "type": "shell",
             "command": "PS4='$ '; set -x; scons -c; scons -c tests; rm -f *.AppImage endless-sky.png; git checkout credits.txt XCode/EndlessSky-Info.plist endless-sky.6 source/main.cpp",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
-                "isDefault": false
-            }
-        },
-        {
-            "label": "Build: Compile Endless Sky OpenGL Desktop",
-            "type": "shell",
-            "command": "PS4='$ '; set -ex; scons -Qj $(nproc) opengl=desktop mode=debug",
-            "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "Test: Run tests",
-            "type": "shell",
-            "command": "PS4='$ '; set -ex; scons -Qj $(nproc) test",
-            "problemMatcher": [],
-            "group": {
-                "kind": "test",
-                "isDefault": false
-            }
-        },
-        {
-            "label": "Test: Run benchmarks",
-            "type": "shell",
-            "command": "PS4='$ '; if [ ! -x ./tests/endless-sky-tests ]; then tput setaf 1; echo 'Execute `Build: Run tests` first...' >&2; tput sgr 0; exit 1; fi; set -ex; ./tests/endless-sky-tests '[!benchmark]'",
-            "problemMatcher": [],
-            "dependsOn": [
-                "Test: Run tests"
-            ],
-            "group": {
-                "kind": "test",
-                "isDefault": false
-            }
-        },
-        {
-            "label": "Test: Run headless integration tests",
-            "type": "shell",
-            "command": "PS4='$ '; set -ex; export PRINT_GLXINFO=true;  ./tests/integration/run_tests_headless.sh",
-            "problemMatcher": [],
-            "dependsOn": [
-                "Build: Compile Endless Sky OpenGL Desktop"
-            ],
-            "group": {
-                "kind": "test",
                 "isDefault": false
             }
         },

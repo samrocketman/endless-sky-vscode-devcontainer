@@ -4,13 +4,22 @@ VOLUME /tmp
 VOLUME /var/cache/apt/archives
 
 ENV DEBIAN_FRONTEND=noninteractive
-
-SHELL [ "/bin/sh", "-exc" ]
+SHELL ["/bin/bash", "-exo", "pipefail", "-c"]
 
 # Endless sky requirements
 RUN \
   apt-get update; \
-  apt-get install -y g++ scons libsdl2-dev libpng-dev libjpeg-dev libgl1-mesa-dev libglew-dev libopenal-dev libmad0-dev uuid-dev
+  apt-get install -y make zip unzip curl tar gzip pkg-config bison autoconf libtool; \
+  apt-get install -y g++ libgl1-mesa-dev libglu1-mesa-dev libx11-dev libxft-dev libxext-dev
+
+# Install latest cmake and ninja
+RUN \
+  cd /usr/local; \
+  curl -sSfL https://github.com/Kitware/CMake/releases/download/v3.25.2/cmake-3.25.2-linux-x86_64.tar.gz | tar --strip-components=1 -xz; \
+  cd bin/; \
+  curl -sSfLO https://github.com/ninja-build/ninja/releases/download/v1.11.1/ninja-linux.zip; \
+  unzip ninja-linux.zip; \
+  rm ninja-linux.zip
 
 # Integration test dependencies
 RUN \
@@ -20,7 +29,7 @@ RUN \
 # AppImage requirements
 RUN \
   apt-get update; \
-  apt-get install -y curl fuse libfuse2 rsync
+  apt-get install -y rsync
 
 # Additional Dev Tools
 RUN \
@@ -44,7 +53,7 @@ RUN \
   apt-get update; \
   apt-get install -y alsa-base pulseaudio libasound2-plugins
 
-# Mac OS and packaging dependencies
+# Packaging dependencies
 RUN \
   apt-get update; \
   apt-get install -y python3.9 python3.9-venv
@@ -56,15 +65,6 @@ RUN \
 
 USER es-user
 WORKDIR /home/es-user
-
-# set up Mac OS XCode support
-RUN \
-  python3.9 -m venv ~/venv; \
-  . ~/venv/bin/activate; \
-  pip install wheel==0.37.1; \
-  pip install docopt==0.6.2 openstep-parser==1.5.3 pbxproj==3.4.0; \
-  pip install regex; \
-  echo 'source ~/venv/bin/activate' >> ~/.bashrc
 
 # set up global gitignore
 RUN \
