@@ -5,7 +5,6 @@
             "name": "Debug: Launch ES",
             "type": "cppdbg",
             "request": "launch",
-            "preLaunchTask": "Build: Compile Endless Sky OpenGL Desktop",
             "program": "${command:cmake.launchTargetPath}",
             "args": [],
             "stopAtEntry": false,
