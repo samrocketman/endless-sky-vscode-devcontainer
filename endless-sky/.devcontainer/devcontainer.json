@@ -15,7 +15,7 @@
         "redhat.vscode-yaml"
     ],
     "settings": {
-        "endlesssky.executablePath": "/workspace/endless-sky/endless-sky",
+        "endlesssky.executablePath": "${command:cmake.launchTargetPath}",
         "files.associations": {
             "**/data/**/*.txt": "endlesssky"
         },

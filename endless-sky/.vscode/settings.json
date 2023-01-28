@@ -71,5 +71,8 @@
         "locale": "cpp",
         "queue": "cpp",
         "stack": "cpp"
-    }
+    },
+    "git.ignoredRepositories": [
+        "/workspace/endless-sky/vcpkg"
+    ]
 }
