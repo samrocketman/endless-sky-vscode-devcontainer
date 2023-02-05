@@ -9,7 +9,7 @@
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
-            "environment": [],
+            "environment": [{"name": "DISPLAY", "value": ":1"}],
             "externalConsole": false,
             "MIMode": "gdb",
             "setupCommands": [

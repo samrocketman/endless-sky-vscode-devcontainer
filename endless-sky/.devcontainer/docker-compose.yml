@@ -24,5 +24,5 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /run/user/${UID:-1000}/pulse/native:/run/user/${UID:-1000}/pulse/native
     environment:
-      DISPLAY: $DISPLAY
+      DISPLAY: ":1"
       PULSE_SERVER: unix:/run/user/${UID:-1000}/pulse/native

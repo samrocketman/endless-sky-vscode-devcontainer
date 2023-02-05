@@ -66,6 +66,11 @@ RUN \
 USER es-user
 WORKDIR /home/es-user
 
+RUN \
+  python3.9 -m venv ~/venv; \
+  /bin/bash -c 'source ~/venv/bin/activate; pip install regex'
+
+
 # set up global gitignore
 RUN \
   mkdir -p .config/git; \
