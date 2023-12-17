@@ -58,6 +58,11 @@ RUN \
   apt-get update; \
   apt-get install -y python3.9 python3.9-venv
 
+# glew dependencies
+RUN \
+  apt-get update; \
+  apt-get install -y libgl-dev libxi-dev libxmu-dev libmad0-dev
+
 # assumes UID 1000
 RUN \
   adduser es-user; \
