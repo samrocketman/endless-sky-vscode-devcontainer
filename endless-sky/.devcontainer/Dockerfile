@@ -86,6 +86,6 @@ RUN \
   mkdir -p ~/.local/share/endless-sky/plugins; \
   cd ~/.local/share/endless-sky/plugins; \
   git clone https://github.com/endless-sky/all-content-plugin.git; \
-  git clone https://github.com/Adde-Endless-Sky/AES-Omnis.git
+  git clone https://github.com/EndlessSkyCommunity/-Omnis.git
 
 CMD /bin/bash
