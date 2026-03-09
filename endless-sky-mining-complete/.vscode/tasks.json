@@ -10,27 +10,27 @@
             "command": "${command:editor.action.insertSnippet}"
         },
         {
-            "label": "Style: clang-format my changes",
+            "label": "Style: clang-format-13 my changes",
             "type": "shell",
-            "command": "PS4='$ '; git-clang-format",
+            "command": "PS4='$ '; git-clang-format-13 --binary clang-format-13",
             "problemMatcher": []
         },
         {
-            "label": "Style: clang-format HEAD commit only",
+            "label": "Style: clang-format-13 HEAD commit only",
             "type": "shell",
-            "command": "PS4='$ '; set -ex; git-clang-format --commit HEAD~1",
+            "command": "PS4='$ '; set -ex; git-clang-format-13 --binary clang-format-13 --commit HEAD~1",
             "problemMatcher": []
         },
         {
-            "label": "Style: clang-format endless-sky master",
+            "label": "Style: clang-format-13 endless-sky master",
             "type": "shell",
-            "command": "PS4='$ '; set -ex; git fetch https://github.com/endless-sky/endless-sky.git master; git-clang-format --commit $(git merge-base FETCH_HEAD HEAD)",
+            "command": "PS4='$ '; set -ex; git fetch https://github.com/endless-sky/endless-sky.git master; git-clang-format-13 --binary clang-format-13 --commit $(git merge-base FETCH_HEAD HEAD)",
             "problemMatcher": []
         },
         {
             "label": "Style: GitHub Action Style Checker",
             "type": "shell",
-            "command": "PS4='$ '; source ~/venv/bin/activate; set -ex; git fetch https://github.com/endless-sky/endless-sky.git master; ( git diff --name-only $(git merge-base FETCH_HEAD HEAD) HEAD '*.cpp' '*.h'; git diff --name-only '*.cpp' '*.h' ) | grep -v '^$' | sort -u | xargs -r python3 ./utils/check_code_style.py",
+            "command": "PS4='$ '; source ~/venv/bin/activate; set -ex; git fetch https://github.com/endless-sky/endless-sky.git master; ( git diff --name-only $(git merge-base FETCH_HEAD HEAD) HEAD '*.cpp' '*.h'; git diff --name-only '*.cpp' '*.h' ) | grep -v '^$' | sort -u | xargs -r python3.9 ./utils/check_code_style.py",
             "problemMatcher": {
                 "owner": "cpp",
                 "fileLocation": ["relative", "${workspaceFolder}"],
@@ -58,7 +58,7 @@
         {
             "label": "Build: Clean and Reset Workspace",
             "type": "shell",
-            "command": "PS4='$ '; set -x; rm -rf build/docker; echo 'Build directory cleaned.'",
+            "command": "PS4='$ '; set -x; scons -c; scons -c tests; rm -f *.AppImage endless-sky.png; git checkout credits.txt XCode/EndlessSky-Info.plist endless-sky.6 source/main.cpp",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -68,7 +68,7 @@
         {
             "label": "Package: Reset AppImage Continuous",
             "type": "shell",
-            "command": "PS4='$ '; set -e; for x in credits.txt endless-sky.6 source/main.cpp; do ( set -x; git checkout \"$x\"; ); done",
+            "command": "PS4='$ '; set -e; for x in XCode/EndlessSky-Info.plist credits.txt endless-sky.6 source/main.cpp; do ( set -x; git checkout \"$x\"; ); done",
             "problemMatcher": []
         },
         {

@@ -16,10 +16,7 @@
         "chrono": "cpp",
         "clocale": "cpp",
         "cmath": "cpp",
-        "compare": "cpp",
-        "concepts": "cpp",
         "condition_variable": "cpp",
-        "coroutine": "cpp",
         "cstdarg": "cpp",
         "cstddef": "cpp",
         "cstdint": "cpp",
@@ -39,10 +36,8 @@
         "numeric": "cpp",
         "optional": "cpp",
         "random": "cpp",
-        "ranges": "cpp",
         "ratio": "cpp",
         "regex": "cpp",
-        "span": "cpp",
         "string_view": "cpp",
         "system_error": "cpp",
         "tuple": "cpp",
@@ -70,13 +65,12 @@
         "cassert": "cpp",
         "cerrno": "cpp",
         "cfloat": "cpp",
+        "ciso646": "cpp",
         "climits": "cpp",
         "ios": "cpp",
         "locale": "cpp",
         "queue": "cpp",
-        "stack": "cpp",
-        "format": "cpp",
-        "source_location": "cpp"
+        "stack": "cpp"
     },
     "git.ignoredRepositories": [
         "/workspace/endless-sky/vcpkg"

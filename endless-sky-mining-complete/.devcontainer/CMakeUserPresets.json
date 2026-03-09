@@ -6,7 +6,7 @@
       "displayName": "Devcontainer",
       "inherits": "linux",
       "cacheVariables": {
-        "ES_USE_VCPKG": "OFF"
+        "ES_USE_SYSTEM_LIBRARIES": "OFF"
       }
     }
   ],
