@@ -1,0 +1,44 @@
+Introduction
+------------
+
+This is the VSCode Dev Container for endless-sky.  To start developing, open
+this folder with VSCode and you'll be prompted to start the Dev Container.  You
+should drop into the Git repository root of [endless-sky][es].
+
+Requirements
+------------
+
+- Linux host
+- X11 display server
+- PulseAudio sound system
+
+See also the [user guide](../docs/userguide.md).
+
+VSCode Tasks
+------------
+
+All tasks are based on endless-sky GitHub actions.  See also [how to run tasks
+in VSCode][howto-tasks].
+
+| Task name                                  | Purpose                                              |
+| ------------------------------------------ | ---------------------------------------------------- |
+| ES Data: Run Conversation                  | Open Endless Sky and directly run the conversation.  |
+| ES Data: Insert Snippet                    | Generate an object, fleet, or snippet in a txt file. |
+| Style: clang-format my changes             | Reformat my changes to match clang code style.       |
+| Style: clang-format HEAD commit only       | Reformat only your current commit.                   |
+| Style: clang-format endless-sky master     | Reformat my changes since endless-sky master branch. |
+| Style: GitHub Action Style Checker         | Run same style check python script as GH actions.    |
+| Code: Merge upstream ES master             | Update your branch with endless-sky master changes.  |
+| Build: Clean and Reset Workspace           | Removes build files                                  |
+| Package: Reset AppImage Continuous         | Reset git workspace for rebuilding AppImage.         |
+| Package: AppImage Continuous               | Create an AppImage for play testing on Linux.        |
+| ES Plugin: Install reveal map plugin       | Create an ES plugin for revealing map.               |
+
+Building and debugging are handled through the CMake Tools extension.  Select
+the "docker" configure preset and use the "docker-debug" or "docker-release"
+build presets.
+
+You can find defined tasks in [`.vscode/tasks.json`](.vscode/tasks.json).
+
+[howto-tasks]: ../docs/how-to-run-tasks.md
+[es]: https://github.com/endless-sky/endless-sky
