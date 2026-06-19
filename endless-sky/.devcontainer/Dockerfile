@@ -1,8 +1,5 @@
 FROM ubuntu:24.04
 
-VOLUME /tmp
-VOLUME /var/cache/apt/archives
-
 ENV DEBIAN_FRONTEND=noninteractive
 SHELL ["/bin/bash", "-exo", "pipefail", "-c"]
 
@@ -39,8 +36,8 @@ RUN apt-get install -y --no-install-recommends rsync
 # Additional Dev Tools
 RUN apt-get install -y --no-install-recommends git gnupg2
 
-# Install clang-format for local style formatting
-RUN apt-get install -y --no-install-recommends clang-format git-clang-format
+# Install clang-format for local style formatting which comes with git-clang-format
+RUN apt-get install -y --no-install-recommends clang-format
 
 # Add C++ debugger
 RUN apt-get install -y --no-install-recommends gdb
@@ -55,6 +52,7 @@ RUN apt-get install -y --no-install-recommends python3 python3-venv
 RUN rm -rf /var/lib/apt/lists/*
 
 # assumes UID 1000
+RUN userdel ubuntu
 RUN \
   adduser es-user; \
   usermod -a -G audio es-user
